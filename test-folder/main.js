@@ -1,37 +1,7 @@
 
 
 $.ajax({
-  url: "http://www.songsterr.com/a/ra/songs/byartists.json?artists=Beatles",
-  method: "GET",
-  success: createEle,
-
-  error: function (err) {
-    console.log(err);
-  }
-})
-
-function createEle(data) {
-  console.log(data)
-  }
-
-$.ajax({
-  url: "https://api.lyrics.ovh/v1/the-beatles/yellow-submarine",
-  method: "GET",
-  success: createLyric,
-
-  error: function (err) {
-    console.log(err);
-  }
-})
-
-function createLyric(data) {
-  console.log(data)
-}
-
-
-
-$.ajax({
-  url: "https://opentdb.com/api.php?amount=10",
+  url: "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple",
   method: "GET",
   success: createTrivia,
 
@@ -44,7 +14,7 @@ function createTrivia(data) {
   console.log(data)
 }
 
-https://www.thecocktaildb.com/api/json/v1/1/random.php
+
 
 $.ajax({
   url: "https://www.thecocktaildb.com/api/json/v1/1/random.php",

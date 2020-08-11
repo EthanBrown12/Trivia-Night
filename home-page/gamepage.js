@@ -3,9 +3,18 @@ let option1 = document.getElementById('option1');
 let option2 = document.getElementById('option2');
 let option3 = document.getElementById('option3');
 let option4 = document.getElementById('option4');
+let questionCounter = document.getElementById('questionCounter');
+let currentQuestion = 1;
+let score = document.getElementById('score');
+const maxQuestions = 10;
+let currentScore = 0;
+let points = 50;
 
 
-
+option1.addEventListener('click', option1Click)
+option2.addEventListener('click', option2Click)
+option3.addEventListener('click', option3Click)
+option4.addEventListener('click', option4Click)
 
 window.onload = sendApiRequest;
 
@@ -25,17 +34,56 @@ function createTrivia(data) {
   option4.innerHTML = `${data.results[0].incorrect_answers[2]}`
 }
 
-// function getNextQuestion
+function option1Click(event) {
+  if(event.target === option1){
+    gameCurrentQuestion.innerHTML = `Correct!`;
+    currentQuestion++;
+    questionCounter.innerHTML = currentQuestion;
+    currentScore = currentScore + points;
+    score.innerHTML = currentScore;
+    sendApiRequest();
+  }
+
+};
+
+function option2Click(event) {
+  if (event.target === option2) {
+    gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
+    currentQuestion++;
+    questionCounter.innerHTML = currentQuestion;
+    sendApiRequest();
+  }
+};
+
+function option3Click(event) {
+  if (event.target === option3) {
+    gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
+    currentQuestion++;
+    questionCounter.innerHTML = currentQuestion;
+    sendApiRequest();
+  }
+};
 
 
+function option4Click(event) {
+  if (event.target === option4) {
+    gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
+    currentQuestion++;
+    questionCounter.innerHTML = currentQuestion;
+    sendApiRequest();
+  }
+};
 
 
+function gameOver(){
+  if(currentQuestion === maxQuestions){
+     return gameCurrentQuestion.innerHTML = `Game Over`;
+  } else {
+    return currentQuestion;
+  }
 
-
-
-
-
-
+}
+ gameOver();
 
 
 

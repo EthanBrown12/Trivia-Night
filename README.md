@@ -16,7 +16,7 @@ Try the application live at []
 * After 10 questions are given evaluates if user won game if they asnwered 5 or more correctly
 * Generates a random cocktail recipe and directions on how to make the cocktail if user wins game
 ## Preview
-![Trivia demo](trivia-night.gif);
+![Trivia demo](images/trivia-night.gif)
 
 ### Getting Started
 1. Clone the repository.

@@ -9,6 +9,9 @@ let score = document.getElementById('score');
 const maxQuestions = 10;
 let currentScore = 0;
 const points = 50;
+const modal = document.getElementById('win-modal');
+const modalText = document.getElementById('end-game');
+
 
 
 option1.addEventListener('click', option1Click)
@@ -19,7 +22,7 @@ option4.addEventListener('click', option4Click)
 window.onload = sendApiRequest;
 
 async function sendApiRequest() {
-  let response = await fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple");
+  let response = await fetch("https://opentdb.com/api.php?amount=50&difficulty=medium&type=multiple");
   console.log(response);
   let data = await response.json();
   console.log(data);
@@ -94,11 +97,13 @@ function option4Click(event) {
 
 
 function youWin(){
-      gameCurrentQuestion.innerHTML = `Congratulations You won`;
+      modal.classList.remove('hidden');
+      gameCurrentQuestion.innerHTML = ` `;
 
    };
 
 function youLose() {
-  gameCurrentQuestion.innerHTML = `Sorry You lost`;
-
+  modal.classList.remove('hidden');
+  modalText.textContent =`Sorry youlost but have a drink!`;
+  gameCurrentQuestion.innerHTML = ` `;
 };

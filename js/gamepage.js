@@ -31,16 +31,32 @@ async function sendApiRequest() {
 
 function createTrivia(data) {
   gameCurrentQuestion.innerHTML = `${data.results[0].question}`
-  option1.innerHTML = `${data.results[0].correct_answer}`
-  option2.innerHTML = `${data.results[0].incorrect_answers[0]}`
-  option3.innerHTML = `${data.results[0].incorrect_answers[1]}`
-  option4.innerHTML = `${data.results[0].incorrect_answers[2]}`
+  const questions = [`${data.results[0].correct_answer}`, `${data.results[0].incorrect_answers[0]}`, `${data.results[0].incorrect_answers[1]}`, `${data.results[0].incorrect_answers[2]}`]
+  const shuffledAnswers = answerShuffler(questions);
+  for (let i = 0; i < questions.length; i++) {
+  option2.innerHTML = shuffledAnswers[i];
+  // `${data.results[0].correct_answer}`
+  // option2.innerHTML = `${data.results[0].incorrect_answers[0]}`
+  // option3.innerHTML = `${data.results[0].incorrect_answers[1]}`
+  // option4.innerHTML = `${data.results[0].incorrect_answers[2]}`
+  }
 }
 
+function answerShuffler(array){
+  for (var i = array.length - 1; i >= 1; i--) {
+    var randomIndex = Math.floor(Math.random() * i);
+    var t = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = t;
+  }
+  return array;
+};
+
+
 function option1Click(event) {
-    if (currentQuestion >= maxQuestions && currentScore >= 300) {
+    if (currentQuestion === maxQuestions && currentScore >= 300) {
     youWin();
-    } else if(currentQuestion >= maxQuestions && currentScore < 250) {
+    } else if(currentQuestion === maxQuestions && currentScore < 250) {
       youLose();
     } else if(event.target === option1){
     gameCurrentQuestion.innerHTML = `Correct!`;
@@ -54,9 +70,9 @@ function option1Click(event) {
 };
 
 function option2Click(event) {
-  if (currentQuestion >= maxQuestions && currentScore >= 300) {
+  if (currentQuestion === maxQuestions && currentScore >= 300) {
     youWin();
-  } else if (currentQuestion >= maxQuestions && currentScore < 250) {
+  } else if (currentQuestion === maxQuestions && currentScore < 250) {
     youLose();
   } else if (event.target === option2) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
@@ -68,9 +84,9 @@ function option2Click(event) {
 
 
 function option3Click(event) {
-  if (currentQuestion >= maxQuestions && currentScore >= 300) {
+  if (currentQuestion === maxQuestions && currentScore >= 300) {
     youWin();
-  } else if (currentQuestion >= maxQuestions && currentScore < 250) {
+  } else if (currentQuestion === maxQuestions && currentScore < 250) {
     youLose();
   } else if (event.target === option3) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
@@ -82,9 +98,9 @@ function option3Click(event) {
 
 
 function option4Click(event) {
-  if (currentQuestion >= maxQuestions && currentScore >= 300) {
+  if (currentQuestion === maxQuestions && currentScore >= 300) {
     youWin();
-  } else if (currentQuestion >= maxQuestions && currentScore < 250) {
+  } else if (currentQuestion === maxQuestions && currentScore < 250) {
     youLose();
   } else if (event.target === option4) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
@@ -104,6 +120,6 @@ function youWin(){
 
 function youLose() {
   modal.classList.remove('hidden');
-  modalText.textContent =`Sorry youlost but have a drink!`;
+  modalText.textContent =`Sorry you lost but have a drink!`;
   gameCurrentQuestion.innerHTML = ` `;
 };

@@ -25,17 +25,38 @@ async function sendApiRequest() {
   let response = await fetch("https://opentdb.com/api.php?amount=50&difficulty=medium&type=multiple");
   console.log(response);
   let data = await response.json();
-  console.log(data);
-  createTrivia(data);
+  console.log(data.results);
+  createTrivia(data.results);
 }
 
 function createTrivia(data) {
-  gameCurrentQuestion.innerHTML = `${data.results[0].question}`
-  option1.innerHTML = `${data.results[0].correct_answer}`
-  option2.innerHTML = `${data.results[0].incorrect_answers[0]}`
-  option3.innerHTML = `${data.results[0].incorrect_answers[1]}`
-  option4.innerHTML = `${data.results[0].incorrect_answers[2]}`
-}
+  let options = [1, 2,3, 4];
+  let wrongAnswers = [0, 1, 2]
+
+  console.log(data)
+  let randomNumber = Math.floor(Math.random() * options.length);
+  let optionIndex = options.splice(randomNumber, 1);
+
+
+
+  gameCurrentQuestion.innerHTML = `${data[0].question}`
+  `option${optionIndex}.innerHTML` = `${data[0].correct_answer}`
+
+  randomNumber = Math.floor(Math.random() * options.length)
+  optionIndex = options.splice(randomNumber, 1);
+
+  `option${optionIndex}.innerHTML` = `${data[0].incorrect_answers[0]}`
+
+  randomNumber = Math.floor(Math.random() * options.length)
+  optionIndex = options.splice(randomNumber, 1);
+
+  `option${optionIndex}.innerHTML` = `${data[0].incorrect_answers[1]}`
+
+  randomNumber = Math.floor(Math.random() * options.length)
+  optionIndex = options.splice(randomNumber, 1);
+
+  `option${optionIndex}.innerHTML` = `${data[0].incorrect_answers[2]}`
+ }
 
 function option1Click(event) {
     if (currentQuestion >= maxQuestions && currentScore >= 300) {
@@ -104,6 +125,6 @@ function youWin(){
 
 function youLose() {
   modal.classList.remove('hidden');
-  modalText.textContent =`Sorry youlost but have a drink!`;
+  modalText.textContent =`Sorry you lost but have a drink!`;
   gameCurrentQuestion.innerHTML = ` `;
 };

@@ -14,6 +14,11 @@ header {
   padding-top: 12px;
 }
 
+.game-container{
+  height:90vh;
+
+}
+
 .header{
   height: 300px;
   background-image: url("../images/pub-trivia-750-x-340.jpg");
@@ -70,10 +75,12 @@ margin-left: 421px;
   margin-bottom: 12px;
   width:50%;
   font-size: 21px;
+  /* border: solid black; */
 }
 .answer-row{
 display: flex;
 align-items: center;
+border: solid black;
 }
 
 .answer-number{
@@ -92,6 +99,7 @@ align-items: center;
 
 .answer:hover{
 width:100%;
+cursor: pointer;
 
 }
 .hidden {
@@ -117,6 +125,6 @@ width:100%;
   background-color: #56CCF2;
 }
 
-h2{
+h3{
   text-align: center;
 }

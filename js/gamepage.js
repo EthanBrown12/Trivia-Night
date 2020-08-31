@@ -1,8 +1,8 @@
 const gameCurrentQuestion = document.getElementById('gameCurrentQuestion');
-let option1 = document.getElementById('option1');
-let option2 = document.getElementById('option2');
-let option3 = document.getElementById('option3');
-let option4 = document.getElementById('option4');
+let option1 = document.querySelector('.option1');
+let option2 = document.querySelector('.option2');
+let option3 = document.querySelector('.option3');
+let option4 = document.querySelector('.option4');
 let questionCounter = document.getElementById('questionCounter');
 let currentQuestion = 1;
 let score = document.getElementById('score');
@@ -104,6 +104,6 @@ function youWin(){
 
 function youLose() {
   modal.classList.remove('hidden');
-  modalText.textContent =`Sorry youlost but have a drink!`;
+  modalText.textContent =`Sorry you lost but have a drink!`;
   gameCurrentQuestion.innerHTML = ` `;
 };

@@ -48,7 +48,10 @@ function option1Click(event) {
     questionCounter.innerHTML = currentQuestion;
     currentScore = currentScore + points;
     score.innerHTML = currentScore;
-    sendApiRequest();
+      setTimeout(function () {
+        sendApiRequest();
+      }, 1000);
+
   }
 
 };
@@ -62,7 +65,9 @@ function option2Click(event) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
     currentQuestion++;
     questionCounter.innerHTML = currentQuestion;
-    sendApiRequest();
+    setTimeout(function () {
+      sendApiRequest();
+    }, 1000);
   }
 }
 
@@ -76,7 +81,9 @@ function option3Click(event) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
     currentQuestion++;
     questionCounter.innerHTML = currentQuestion;
-    sendApiRequest();
+    setTimeout(function () {
+      sendApiRequest();
+    }, 1000);
   }
 };
 
@@ -90,7 +97,9 @@ function option4Click(event) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
     currentQuestion++;
     questionCounter.innerHTML = currentQuestion;
-    sendApiRequest();
+    setTimeout(function () {
+      sendApiRequest();
+    }, 1000);
   }
 }
 
@@ -104,6 +113,6 @@ function youWin(){
 
 function youLose() {
   modal.classList.remove('hidden');
-  modalText.textContent =`Sorry you lost but have a drink!`;
+  modalText.textContent =`Sorry you lost because your score was less than 300 but have a drink!`;
   gameCurrentQuestion.innerHTML = ` `;
 };

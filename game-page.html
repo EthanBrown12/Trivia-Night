@@ -9,50 +9,84 @@
   <title>Trivia-Night-Game-Page</title>
 </head>
 <body>
-<div class="container">
-  <header>
-    <div class="row header">
-      <div class="col-12">
-      </div>
+  <header class="header">
+    <div>
+    <h3 class="badge-header">Question<span id="questionCounter" class="badge badge-secondary">1</span></h3>
     </div>
-  </header>
-</div>
-<div class="stats row">
-    <div class="col-2 question">
-      <h3 class="badge-header">Question<span id="questionCounter" class="badge badge-secondary">1</span></h3>
-    </div>
-    <div class="col-2 score">
+    <div class="score">
       <h3 class="badge-header">Score<span id="score" class="badge badge-secondary">0</span></h3>
     </div>
-</div>
-<div class="row">
-  <h1 id="gameCurrentQuestion" class="game-question col-12"></h1>
-</div>
-<div class="answer-container justify-center flex-column">
-  <div class="row answer">
-    <p class="answer-number">1</p>
-    <p id="option1" class="answer-option">option 1</p>
-  </div>
-  <div class="row answer">
-    <p class="answer-number">2</p>
-    <p id="option2"class="answer-option">option 2</p>
-  </div>
-  <div class="row answer">
-    <p class="answer-number">3</p>
-    <p id="option3" class="answer-option">option 3</p>
-  </div>
-  <div class="row answer">
-    <p class="answer-number">4</p>
-    <p id="option4" class="answer-option">option 4</p>
-  </div>
-</div>
-
-
-</div>
-
-
+  </header>
+  <modal id="win-modal" class="hidden">
+    <h4 id="end-game">Congratulations you have won!!!</h4>
+    <div class="play-btn col-2 offset-5">
+      <button type="button" onclick="location.href='drinks.html'" class="drinks-btn btn-primary" data-toggle="button"
+        aria-pressed="false" autocomplete="off">
+        <h3>Get Drinks!</h3>
+      </button>
+    </div>
+  </modal>
+<div class="container">
+  <div id="game" class="justify-center flex-column">
+    <h2 id="gameCurrentQuestion">What is the answer to this questions?</h2>
+    <div class="choice-container">
+      <p class="answer-number">1</p>
+      <p class="option1">Option 1</p>
+    </div>
+    <div class="choice-container">
+      <p class="answer-number">2</p>
+      <p class="option2">Option 2</p>
+    </div>
+    <div class="choice-container">
+      <p class="answer-number">3</p>
+      <p class="option3">Option 3</p>
+    </div>
+    <div class="choice-container">
+      <p class="answer-number">4</p>
+      <p class="option4">Option 4</p>
+    </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
   <script src="js/gamepage.js"></script>
 </body>
 </html>
+
+
+
+
+<!-- <div class="stats row">
+  <div class="question">
+    <h3 class="badge-header">Question<span id="questionCounter" class="badge badge-secondary">1</span></h3>
+  </div>
+  <div class="score">
+    <h3 class="badge-header">Score<span id="score" class="badge badge-secondary">0</span></h3>
+  </div>
+</div>
+<div class="row">
+  <h2 id="gameCurrentQuestion" class="game-question col-12"></h2>
+</div>
+<div class="answer-container justify-center flex-column offset-3">
+  <div class="row answer">
+    <p class="answer-number">1</p>
+    <p id="option1" class="answer-option">option 1</p>
+  </div>
+</div>
+<div class="answer-container justify-center flex-column offset-3">
+  <div class="row answer">
+    <p class="answer-number">2</p>
+    <p id="option2" class="answer-option">option 2</p>
+  </div>
+</div>
+<div class="answer-container justify-center flex-column offset-3"></div>
+<div class="row answer">
+  <p class="answer-number">3</p>
+  <p id="option3" class="answer-option">option 3</p>
+</div>
+</div>
+<div class="answer-container justify-center flex-column offset-3"></div>
+<div class="row answer">
+  <p class="answer-number">4</p>
+  <p id="option4" class="answer-option">option 4</p>
+</div>
+</div>
+</div> -->

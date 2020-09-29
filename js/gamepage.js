@@ -1,14 +1,17 @@
 const gameCurrentQuestion = document.getElementById('gameCurrentQuestion');
-let option1 = document.getElementById('option1');
-let option2 = document.getElementById('option2');
-let option3 = document.getElementById('option3');
-let option4 = document.getElementById('option4');
+let option1 = document.querySelector('.option1');
+let option2 = document.querySelector('.option2');
+let option3 = document.querySelector('.option3');
+let option4 = document.querySelector('.option4');
 let questionCounter = document.getElementById('questionCounter');
 let currentQuestion = 1;
 let score = document.getElementById('score');
 const maxQuestions = 10;
 let currentScore = 0;
 const points = 50;
+const modal = document.getElementById('win-modal');
+const modalText = document.getElementById('end-game');
+
 
 
 option1.addEventListener('click', option1Click)
@@ -19,7 +22,7 @@ option4.addEventListener('click', option4Click)
 window.onload = sendApiRequest;
 
 async function sendApiRequest() {
-  let response = await fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple");
+  let response = await fetch("https://opentdb.com/api.php?amount=50&difficulty=medium&type=multiple");
   console.log(response);
   let data = await response.json();
   console.log(data);
@@ -45,7 +48,10 @@ function option1Click(event) {
     questionCounter.innerHTML = currentQuestion;
     currentScore = currentScore + points;
     score.innerHTML = currentScore;
-    sendApiRequest();
+      setTimeout(function () {
+        sendApiRequest();
+      }, 1000);
+
   }
 
 };
@@ -59,7 +65,9 @@ function option2Click(event) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
     currentQuestion++;
     questionCounter.innerHTML = currentQuestion;
-    sendApiRequest();
+    setTimeout(function () {
+      sendApiRequest();
+    }, 1000);
   }
 }
 
@@ -73,7 +81,9 @@ function option3Click(event) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
     currentQuestion++;
     questionCounter.innerHTML = currentQuestion;
-    sendApiRequest();
+    setTimeout(function () {
+      sendApiRequest();
+    }, 1000);
   }
 };
 
@@ -87,18 +97,22 @@ function option4Click(event) {
     gameCurrentQuestion.innerHTML = `Sorry, incorrect!`;
     currentQuestion++;
     questionCounter.innerHTML = currentQuestion;
-    sendApiRequest();
+    setTimeout(function () {
+      sendApiRequest();
+    }, 1000);
   }
 }
 
 
 
 function youWin(){
-      gameCurrentQuestion.innerHTML = `Congratulations You won`;
+      modal.classList.remove('hidden');
+      gameCurrentQuestion.innerHTML = ` `;
 
    };
 
 function youLose() {
-  gameCurrentQuestion.innerHTML = `Sorry You lost`;
-
+  modal.classList.remove('hidden');
+  modalText.textContent =`Sorry you lost because your score was less than 300 but have a drink!`;
+  gameCurrentQuestion.innerHTML = ` `;
 };

@@ -113,15 +113,20 @@ h3 {
 
 .option1 {
   padding: 1.5rem;
+  width: 710px;
 }
 .option2 {
   padding: 1.5rem;
+  width: 710px;
 }
 .option3 {
   padding: 1.5rem;
+  width: 710px;
 }
 .option4 {
   padding: 1.5rem;
+  width: 710px;
+
 }
 
 /* UTILITIES */
@@ -191,13 +196,16 @@ h3 {
   display: none;
 }
 
+/* .drinks-btn{
+  color: #ff0053;
+} */
 
 #win-modal{
   position: fixed;
   /* margin-top: 150px; */
   /* margin-left: 300px; */
   height: 30vh;
-  background-color: blue;
+  background-color:#ff0053;
   width: 55%;
   margin-left: 69px;
  }

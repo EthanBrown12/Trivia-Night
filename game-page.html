@@ -11,15 +11,17 @@
 <body>
   <header class="header">
     <div>
-    <h3 class="badge-header">Question<span id="questionCounter" class="badge badge-secondary">1</span></h3>
+    <h3 class="badge-header">Question<span id="questionCounter" class="badge badge-secondary margin">1</span><span class="margin">Of 10</span></h3>
     </div>
     <div class="score">
-      <h3 class="badge-header">Score<span id="score" class="badge badge-secondary">0</span></h3>
+      <h3 class="badge-header">Current Score =<span id="score" class="badge badge-secondary margin">0</span><span class="margin">Score at least 300 to win!</span></h3>
+    </div>
+    <div class="image">
     </div>
   </header>
   <modal id="win-modal" class="hidden">
-    <h4 id="end-game">Congratulations you have won!!!</h4>
-    <div class="play-btn col-2 offset-5">
+    <h4 id="end-game"></h4>
+    <div class="play-btn col-2 offset-3">
       <button type="button" onclick="location.href='drinks.html'" class="drinks-btn btn-primary" data-toggle="button"
         aria-pressed="false" autocomplete="off">
         <h3>Get Drinks!</h3>
@@ -30,19 +32,19 @@
   <div id="game" class="justify-center flex-column">
     <h2 id="gameCurrentQuestion">What is the answer to this questions?</h2>
     <div class="choice-container">
-      <p class="answer-number">1</p>
+      <p class="answer-number1">1</p>
       <p class="option1">Option 1</p>
     </div>
     <div class="choice-container">
-      <p class="answer-number">2</p>
+      <p class="answer-number2">2</p>
       <p class="option2">Option 2</p>
     </div>
     <div class="choice-container">
-      <p class="answer-number">3</p>
+      <p class="answer-number3">3</p>
       <p class="option3">Option 3</p>
     </div>
     <div class="choice-container">
-      <p class="answer-number">4</p>
+      <p class="answer-number4">4</p>
       <p class="option4">Option 4</p>
     </div>
 

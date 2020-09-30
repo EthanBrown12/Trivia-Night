@@ -15,14 +15,25 @@ body {
 }
 .header{
   height: 200px;
+  /* background-image: url("../images/pub-trivia-750-x-340.jpg"); */
+  /* padding-top: 90px; */
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 40%; */
+
+
+}
+.image {
+  height: 81px;
   background-image: url("../images/pub-trivia-750-x-340.jpg");
   /* padding-top: 90px; */
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto 40%;
+  background-size: auto 111%;
 
 
 }
+
 h1,
 h2,
 h3,
@@ -59,6 +70,12 @@ h3 {
   border: 0.1rem solid black;
   /* background-color: white; */
 }
+.answer-number:hover{
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
 
 .choice-container:hover {
   cursor: pointer;
@@ -67,11 +84,32 @@ h3 {
   transition: transform 150ms;
 }
 
-.answer-number {
+
+.answer-number1 {
   padding: 1.5rem 2.5rem;
   background-color: #56a5eb;
   color: white;
 }
+
+.answer-number2 {
+  padding: 1.5rem 2.5rem;
+  background-color: #56a5eb;
+  color: white;
+}
+
+.answer-number3 {
+  padding: 1.5rem 2.5rem;
+  background-color: #56a5eb;
+  color: white;
+}
+
+.answer-number4 {
+  padding: 1.5rem 2.5rem;
+  background-color: #56a5eb;
+  color: white;
+}
+
+
 
 .option1 {
   padding: 1.5rem;
@@ -171,4 +209,12 @@ h3 {
 
 #play-again{
   background-color: #56CCF2;
+}
+
+.margin{
+  margin-left: 12px;
+}
+
+#end-game{
+  color: white;
 }
